@@ -1,0 +1,25 @@
+﻿<Window x:Class="Example2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Example2"
+        Title="MvvmExample"  Height="295.261" Width="528.317">
+    <Window.DataContext>
+        <!-- Declaratively create an instance of our SongViewModel -->
+        <local:SongViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="2" Content="MvvmExample - this works!" Grid.ColumnSpan="2" Margin="120,97.2,-10.4,-104.2" />
+        <Label Grid.Column="0" Grid.Row="2" Content="Artist:  " Grid.ColumnSpan="2" Margin="120,124.2,-10.4,-130.2" />
+        <Label Grid.Column="1" Grid.Row="2" Content="{Binding ArtistName}" Margin="120,124.2,-119.4,-130.2" />
+        <Button Grid.Column="1" Grid.Row="2" Name="ButtonUpdateArtist" Content="Update Artist Name" Click="ButtonUpdateArtist_Click" Margin="120,150.2,-119.4,-150.2" />
+    </Grid>
+</Window>
