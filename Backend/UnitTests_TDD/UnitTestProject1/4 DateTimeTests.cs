@@ -9,7 +9,6 @@ namespace _01CreateUnitTest
         [Test]
         public void FlakyTest()
         {
-            Assert.AreEqual(0, System.DateTime.Now.Ticks % 2);
         }
     }
 }

@@ -7,13 +7,11 @@
         [Test]
         public void FirstSuccessTest()
         {
-            Assert.AreEqual(1, 1);
         }
 
         [Test]
         public void FirstFailTest()
         {
-            Assert.True(false);
         }
     }
 }
