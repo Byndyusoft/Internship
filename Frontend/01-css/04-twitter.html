@@ -1,0 +1,223 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+  body {
+    font-family: sans-serif;
+    max-width: 1400px;
+  }
+  .layout {
+    display: flex;
+  }
+  .leftMenu {
+    flex-basis: 250px;
+    border-right: 1px solid;
+  }
+  .main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .mainContent {
+    max-width: 1000px;
+  }
+  .menuItem {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+  }
+  .tweetButton {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    background: rgb(29, 161, 242);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .searchInput {
+    all: unset;
+    background: #e6ecf0;
+    margin-top: 3px;
+    padding-left: 50px;
+    height: 33px;
+    border-radius: calc(33px / 2);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header {
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .followBlock {
+    background: #f5f8fa;
+    width: 338px;
+    border-left: 1px solid;
+    padding-left: 10px;
+  }
+  .followHeader {
+    font-family: sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 27px;
+  }
+  .followItem {
+    display: flex;
+    margin-bottom: 34px;
+  }
+  .followItemPhoto {
+    width: 41px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .followItemMain {
+    flex-grow: 1;
+  }
+  .followItemButton {
+    all: unset;
+    height: 30px;
+    border: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+    border-radius: 15px;
+    padding: 0 16px;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .layout {
+      flex-direction: column;
+    }
+    .burger {
+      display: block;
+      font-size: 40px;
+    }
+    .leftMenu {
+      display: none;
+    }
+    .leftMenuMobileShown {
+      display: block;
+    }
+  }
+</style>
+<button
+  class="burger"
+  onclick="document
+.getElementsByClassName('leftMenu')[0]
+.classList.toggle('leftMenuMobileShown')"
+>
+  🍔
+</button>
+<div class="layout">
+  <div class="leftMenu">
+    <div class="menuItem">
+      Home
+    </div>
+    <div class="menuItem">
+      Explore
+    </div>
+    <div class="menuItem">Notifications</div>
+    <div class="menuItem">Messages</div>
+    <div class="menuItem">Bookmarks</div>
+    <div class="menuItem">Lists</div>
+
+    <div class="menuItem">Profile</div>
+    <div class="menuItem">More</div>
+
+    <div class="tweetButton">Tweet</div>
+  </div>
+
+  <div class="main">
+    <div class="mainContent">
+      <div class="searchBox">
+        <input class="searchInput" placeholder="Search Twitter" />
+      </div>
+      <div>
+        <div>Trends for you</div>
+        <div>Trending in Norway</div>
+        <div>Taylor</div>
+        <div>1.45M Tweets</div>
+
+        <div>
+          What is going on with Taylor Swift, her back catalogue and Justin
+          Bieber?
+        </div>
+        <div>
+          Taylor Swift is back in the headlines after denouncing the sale of her
+          back catalogue. One Guardian Australia staffer asked another to
+          explain this celebrity omnishambles … quickly
+        </div>
+        <div>theguardian.com</div>
+        <div>#SweetenerWorldTour</div>
+        <div>
+          Ariana Grande added NEW DATES to her world tour. Get tickets now!
+        </div>
+        <div>Promoted by Live Nation</div>
+        <div>Trending in Norway</div>
+        <div>#MUFC</div>
+        <div>59.3K Tweets</div>
+        <div>Trending in Norway</div>
+        <div>Brexit</div>
+        <div>158K Tweets</div>
+
+        <div>
+          Opinion: Len McCluskey is like the end-of-level boss for the Brexit …
+        </div>
+        <div>
+          Who is it, do you think, in our public life who is doing the most to
+          ensure that Brexit happens? Nigel Farage? Arron Banks? Emmanuel Macron
+          (covertly)? Boris Johnson? Jeremy Hunt? Jeremy Clarkson?
+        </div>
+        <div>independent.co.uk</div>
+        <div>Trending in Norway</div>
+        <div>China</div>
+        <div>253K Tweets</div>
+
+        <div>China Caixin manufacturing PMI shows activity shrank in June</div>
+        <div>
+          Activity in China’s manufacturing sector fell in June following three
+          months of growth, renewing calls for further government stimulus as
+          trade tensions knocked sales and export orders.
+        </div>
+        <div>ft.com</div>
+        <div>Show more</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="followBlock">
+    <div class="followHeader">
+      Who to follow
+    </div>
+    <div class="followItem">
+      <img class="followItemPhoto" src="../img/guy-01.jpg" alt="" />
+      <div class="followItemMain">
+        <div>Vasily Smith</div>
+        <div>@vasilysmith</div>
+      </div>
+      <button class="followItemButton">Follow</button>
+    </div>
+
+    <div class="followItem">
+      <img class="followItemPhoto" src="../img/guy-02.jpg" alt="" />
+      <div class="followItemMain">
+        <div>Mark Smirnov</div>
+        <div>@marksmirnov</div>
+      </div>
+      <button class="followItemButton">Follow</button>
+    </div>
+
+    <div class="followItem">
+      <img class="followItemPhoto" src="../img/guy-03.jpg" alt="" />
+      <div class="followItemMain">
+        <div>Victor Conery</div>
+        <div>@victorconery</div>
+      </div>
+      <button class="followItemButton">Follow</button>
+    </div>
+  </div>
+</div>
