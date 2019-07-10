@@ -66,8 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Example2\MvvmExample.csproj">
-      <Project>{d156c5e9-3879-45dc-8f4b-cc71ad3aed6b}</Project>
-      <Name>Example2</Name>
+      <Project>{D156C5E9-3879-45DC-8F4B-CC71AD3AED6B}</Project>
+      <Name>MvvmExample</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

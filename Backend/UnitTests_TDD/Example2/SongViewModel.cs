@@ -36,13 +36,13 @@ namespace Example2
 
         public string ArtistName
         {
-            get { return Song.ArtistName; }
+            get => Song.ArtistName;
             set 
             {
                 if (Song.ArtistName != value)
                 {
                     Song.ArtistName = value;
-                   RaisePropertyChanged("ArtistName");
+                    RaisePropertyChanged("ArtistName");
                 }
             }
         } 
@@ -60,10 +60,7 @@ namespace Example2
         {
             // take a copy to prevent thread issues
             PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

@@ -24,7 +24,7 @@ namespace Example2
         private void ButtonUpdateArtist_Click(object sender, RoutedEventArgs e)
         {
             ++_count;
-            _viewModel.ArtistName = string.Format("Elvis ({0})", _count);
+            _viewModel.ArtistName = $"Elvis ({_count})";
         }
     }
 }
