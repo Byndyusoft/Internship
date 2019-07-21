@@ -1,0 +1,97 @@
+<style>
+  body {
+    font-family: sans-serif;
+    max-width: 1400px;
+  }
+
+  .followItem {
+    display: flex;
+    margin-bottom: 34px;
+  }
+  .followItemPhoto {
+    width: 41px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .followItemMain {
+    flex-grow: 1;
+  }
+  .followItemButton {
+    all: unset;
+    height: 30px;
+    border: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+    border-radius: 15px;
+    padding: 0 16px;
+    display: inline-block;
+    line-height: 30px;
+  }
+  .followItemButton:hover {
+    background-color: rgb(29, 161, 242);
+    color: white;
+    cursor: pointer;
+  }
+</style>
+
+<h1>React Component</h1>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<script type="text/babel">
+  const twitterAccount = {
+    picUrl:
+      "https://pbs.twimg.com/profile_images/1092495711323574272/QxK_EjzP_400x400.jpg",
+    name: "Christina Zhu",
+    handle: "cszhu"
+  };
+
+  const element = (
+    <div className="followItem">
+      <img className="followItemPhoto" src={twitterAccount.picUrl} alt />
+      <div className="followItemMain">
+        <div>{twitterAccount.name}</div>
+        <div>@{twitterAccount.handle}</div>
+      </div>
+      <a
+        href={`https://twitter.com/${twitterAccount.handle}`}
+        className="followItemButton"
+        target="_blank"
+      >
+        Go to profile
+      </a>
+    </div>
+  );
+
+  // function TwitterAccount(props) {
+  //   return (
+  //     <div className="followItem">
+  //       <img className="followItemPhoto" src={props.picUrl} alt />
+  //       <div className="followItemMain">
+  //         <div>{props.name}</div>
+  //         <div>@{props.handle}</div>
+  //       </div>
+  //       <a
+  //         href={`https://twitter.com/${props.handle}`}
+  //         className="followItemButton"
+  //         target="_blank"
+  //       >
+  //         Go to profile
+  //       </a>
+  //     </div>
+  //   );
+  // }
+
+  ReactDOM.render(
+    // <TwitterAccount
+    //   picUrl={twitterAccount.picUrl}
+    //   name={twitterAccount.name}
+    //   handle={twitterAccount.handle}
+    // />,
+    element,
+    document.getElementById("root")
+  );
+</script>
