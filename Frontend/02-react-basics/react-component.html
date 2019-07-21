@@ -1,0 +1,102 @@
+<style>
+  body {
+    font-family: sans-serif;
+    max-width: 1400px;
+  }
+
+  .followItem {
+    display: flex;
+    margin-bottom: 34px;
+  }
+  .followItemPhoto {
+    width: 41px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .followItemMain {
+    flex-grow: 1;
+  }
+  .followItemButton {
+    all: unset;
+    height: 30px;
+    border: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+    border-radius: 15px;
+    padding: 0 16px;
+    display: inline-block;
+    line-height: 30px;
+  }
+  .followItemButton:hover {
+    background-color: rgb(29, 161, 242);
+    color: white;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <h1>HTML</h1>
+  <div class="followItem">
+    <img class="followItemPhoto" src="./img/guy-01.jpg" alt="" />
+    <div class="followItemMain">
+      <div>Vasily Smith</div>
+      <div>@vasilysmith</div>
+    </div>
+    <a href="https://twitter.com" class="followItemButton" target="_blank"
+      >Go to profile</a
+    >
+  </div>
+
+  <h1>React Component</h1>
+
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<script type="text/babel">
+  // TODO: make this an element first and then a function
+  // TODO: show jsx to js in babel repl
+  // TODO: conditions
+
+  //   function Profile(props) {
+  //     return (
+  //       <div className="followItem">
+  //         <img className="followItemPhoto" src={props.imageAddress} alt="" />
+  //         <div className="followItemMain">
+  //           <div>{props.name}</div>
+  //           <div>@{props.login}</div>
+  //         </div>
+  //         <a
+  //           href={`https://twitter.com/${props.login}`}
+  //           className="followItemButton"
+  //           target="_blank"
+  //         >
+  //           Go to profile
+  //         </a>
+  //       </div>
+  //     );
+  //   }
+
+  //   const data = getOneAccountData();
+
+  ReactDOM.render(
+    // React.createElement(Profile, data),
+    null,
+
+    document.getElementById("root")
+  );
+
+  // data
+
+  function getOneAccountData() {
+    return {
+      name: "Nicole Sullivan",
+      imageAddress:
+        "https://pbs.twimg.com/profile_images/1124039654800535552/wlCUQpq5_400x400.png",
+      login: "stubbornella"
+    };
+  }
+</script>

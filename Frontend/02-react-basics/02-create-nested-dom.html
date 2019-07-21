@@ -1,0 +1,25 @@
+<style>
+  body {
+    font-family: sans-serif;
+  }
+</style>
+
+<body>
+  <h1>Create nested elements with JS</h1>
+</body>
+
+<script>
+  const list = document.createElement("ul");
+
+  // first item
+  const firstItem = document.createElement("li");
+  firstItem.textContent = "first element";
+  list.appendChild(firstItem);
+
+  // second
+  const secondItem = document.createElement("li");
+  secondItem.textContent = "second element";
+  list.appendChild(secondItem);
+
+  document.body.appendChild(list);
+</script>

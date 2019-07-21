@@ -1,0 +1,66 @@
+<style>
+  body {
+    font-family: sans-serif;
+  }
+</style>
+
+<body>
+  <h1>Javascript changes dom</h1>
+  <div id="root"></div>
+</body>
+
+<script>
+  const provinces = getFranceProivinces();
+
+  // debugger;
+
+  // const list = document.createElement("ul");
+
+  // for (const provinceName of provinces) {
+  //   const item = document.createElement("li");
+  //   item.textContent = provinceName;
+  //   list.appendChild(item);
+  // }
+
+  // const rootElement = document.getElementById("root");
+  // rootElement.appendChild(list);
+
+  function getFranceProivinces() {
+    return [
+      "Île-de-France",
+      "Berry",
+      "Orléanais",
+      "Normandy",
+      "Languedoc",
+      "Lyonnais",
+      "Dauphiné",
+      "Champagne",
+      "Aunis",
+      "Saintonge",
+      "Poitou",
+      "Guyenne and Gascony",
+      "Burgundy",
+      "Picardy",
+      "Anjou",
+      "Provence",
+      "Angoumois",
+      "Bourbonnais",
+      "Marche",
+      "Brittany",
+      "Maine",
+      "Touraine",
+      "Limousin",
+      "Foix",
+      "Auvergne",
+      "Béarn",
+      "Alsace",
+      "Artois",
+      "Roussillon",
+      "Flanders and Hainaut",
+      "Franche-Comté",
+      "Lorraine",
+      "Corsica",
+      "Nivernais"
+    ];
+  }
+</script>
