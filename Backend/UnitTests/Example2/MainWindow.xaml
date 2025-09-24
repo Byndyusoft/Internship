@@ -1,11 +1,11 @@
-﻿<Window x:Class="Example2.MainWindow"
+﻿<Window x:Class="MvvmExample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:Example2"
+        xmlns:local="clr-namespace:MvvmExample"
         Title="MvvmExample"  Height="295.261" Width="528.317">
     <Window.DataContext>
         <!-- Declaratively create an instance of our SongViewModel -->
-        <local:SongViewModel />
+        <local:SongViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>

@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Example2
+namespace MvvmExample
 {
     /// <summary>
     /// This class is a view model of a song.

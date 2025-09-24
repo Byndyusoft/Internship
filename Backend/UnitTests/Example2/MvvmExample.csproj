@@ -8,9 +8,9 @@
     <ProjectGuid>{D156C5E9-3879-45DC-8F4B-CC71AD3AED6B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Example2</RootNamespace>
-    <AssemblyName>Example2</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>MvvmExample</RootNamespace>
+    <AssemblyName>MvvmExample</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
