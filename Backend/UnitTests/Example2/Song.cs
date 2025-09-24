@@ -1,5 +1,5 @@
 ﻿
-namespace Example2
+namespace MvvmExample
 {
     /// <summary>
     /// Model of a 'song'.

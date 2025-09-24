@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Example2
+namespace MvvmExample
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace Example2
+namespace MvvmExample
 {
     /// <summary>
     /// Interaction logic for App.xaml

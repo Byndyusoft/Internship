@@ -11,8 +11,7 @@ namespace MockExamples
     using SomeServices;
 
     public class MembershipServiceTests
-    {
-
+    {   
         [Test]
         public void IfUserNotFound_ThrowArgumentExeption()
         {
@@ -34,7 +33,10 @@ namespace MockExamples
 
         class StubDatabaseContext : IDatabaseContext
         {
-            
+            public IQueryable<T> Query<T>()
+            {
+                throw new NotImplementedException();
+            }
         }
 
         [Test]

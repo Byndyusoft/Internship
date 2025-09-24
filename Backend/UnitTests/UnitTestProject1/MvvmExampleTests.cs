@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Example2;
+using MvvmExample;
 using NUnit.Framework;
 
 namespace MvvmTests
