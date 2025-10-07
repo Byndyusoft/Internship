@@ -2,13 +2,18 @@
 
 namespace TddDemo
 {
-    public class ExcelFile
+    public class ExcelFile : IFile
     {
-        public readonly List<Row> _rows;
+        public List<Row> Rows {  get; private set; }
 
         public ExcelFile(List<Row> rows)
         {
-            _rows = rows;
+            Rows = rows;
+        }
+
+        public bool IsValidRow(Row x)
+        {
+            return x.Cells.Count == 2;
         }
     }
     public class Row

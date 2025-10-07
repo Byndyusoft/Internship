@@ -4,24 +4,29 @@ namespace TddDemo
 {
     public class Parser
     {
-        public Parser(IAlertPublisher publisher)
+        public Parser(IAlertPublisher publisher, IFileRepository fileRepository)
         {
             Publisher = publisher;
+            FileRepository = fileRepository;
         }
 
         public IAlertPublisher Publisher { get; }
+        public IFileRepository FileRepository { get; }
+        public bool IsProcessed { get; private set; }
 
-        public int Parse(ExcelFile excelFile)
+        public int Parse(IFile file)
         {
-            for (var i = 0; i < excelFile._rows.Count(x => IsValidRow(x) == false); i++)
+            for (var i = 0; i < file.Rows.Count(x => file.IsValidRow(x) == false); i++)
                 Publisher.PublishAlert();
 
-            return excelFile._rows.Count(IsValidRow);
-        }
+            if (file.Rows.All(file.IsValidRow))
+            {
+                FileRepository.Save(file);
 
-        private static bool IsValidRow(Row x)
-        {
-            return x.Cells.Count == 2;
+                IsProcessed = true;
+            }
+
+            return file.Rows.Count(file.IsValidRow);
         }
     }
 }

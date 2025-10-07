@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using NUnit.Framework;
 using TddDemo;
@@ -11,10 +12,12 @@ namespace TddDemoTests
         public void Setup()
         {
             publisher = new Mock<IAlertPublisher>();
-            parser = new Parser(publisher.Object);
+            repository = new Mock<IFileRepository>();
+            parser = new Parser(publisher.Object, repository.Object);
         }
 
         public Mock<IAlertPublisher> publisher { get; set; }
+        public Mock<IFileRepository> repository { get; set; }
         public Parser parser { get; set; }
 
         [Test]
@@ -67,7 +70,7 @@ namespace TddDemoTests
         public void PublishAlert_IfOneRowIsInvalid()
         {
 
-            var count = new Parser(publisher.Object).Parse(new ExcelFile(new List<Row>
+            var count = new Parser(publisher.Object, repository.Object).Parse(new ExcelFile(new List<Row>
                 {
                     CreateValidRow(),
                     new Row(new List<Cell>
@@ -84,7 +87,7 @@ namespace TddDemoTests
         public void DoNotPublishAlert_IfAllRowsAreValid()
         {
 
-            var count = new Parser(publisher.Object).Parse(new ExcelFile(new List<Row>
+            var count = new Parser(publisher.Object, repository.Object).Parse(new ExcelFile(new List<Row>
                 {
                     CreateValidRow(),
                     CreateValidRow()
@@ -94,13 +97,56 @@ namespace TddDemoTests
             publisher.Verify(x=>x.PublishAlert(), Times.Never);
         }
 
-        private static Row CreateValidRow()
+        private static Row CreateValidRow(int numberOfCells = 2)
         {
-            return new Row(new List<Cell>
-            {
-                new Cell(),
-                new Cell()
-            });
+            var cells = Enumerable.Repeat(new Cell(), numberOfCells).ToList();
+            return new Row(cells);
+        }
+
+        [Test]
+        public void MarkAsProcessed_IfAllRowsWereParsed()
+        {
+            var parser = new Parser(publisher.Object, repository.Object);
+            var _ = parser.Parse(new ExcelFile(new List<Row>
+                {
+                    CreateValidRow(),
+                    CreateValidRow()
+                })
+            );
+
+            Assert.IsTrue(parser.IsProcessed);
+        }
+
+        [Test]
+        public void DoNotMarkAsProcessed_IfAnyRowWereNotParsed()
+        {
+            var parser = new Parser(publisher.Object, repository.Object);
+            var _ = parser.Parse(new ExcelFile(new List<Row>
+                {
+                    CreateValidRow(),
+                    new Row(new List<Cell>
+                    {
+                        new Cell()
+                    })
+                })
+            );
+
+            Assert.IsFalse(parser.IsProcessed);
+        }
+
+        [Test]
+        public void Return3ParsedRowsCountFromCsvFile()
+        {
+            var parser = new Parser(publisher.Object, repository.Object);
+            var count = parser.Parse(new CsvFile(new List<Row>
+                {
+                    CreateValidRow(3),
+                    CreateValidRow(3),
+                    CreateValidRow(3)
+                })
+            );
+
+            Assert.AreEqual(3, count);
         }
     }
 }
